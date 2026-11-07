@@ -120,7 +120,6 @@ h3.t{font:400 clamp(38px,6vw,56px)/1.15 var(--serif);color:var(--claret);margin:
 .top{color:#8a6d70;text-decoration:none;font-size:11px;display:inline-block;margin-top:26px}
 footer{background:var(--night);color:var(--gold);text-align:center;padding:26px 20px;font:400 11px var(--sans);letter-spacing:.22em;text-transform:uppercase}
 
-
 .idnote{margin:20px 0 0;padding:12px 18px;background:var(--claret);color:var(--gold);border:1px solid var(--gold);border-radius:6px;font:500 11px/1.6 var(--sans);letter-spacing:.14em;box-shadow:0 0 0 4px var(--blush),0 0 0 5px #a98a4f88}
 .rsvp{background:var(--ivory)}.rsvp .contact{font-style:normal;font-size:clamp(20px,3vw,24px);color:var(--claret);max-width:600px;margin:12px auto 0}
 .contact a{color:var(--claret);font-weight:600;text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:5px;white-space:nowrap}
@@ -166,6 +165,10 @@ fieldset{border:0;padding:0;margin:22px 0 0;display:grid;gap:12px}
 <use href="#bud" x="225" y="20" width="34" height="34"/><use href="#bud" x="95" y="205" width="30" height="30"/><use href="#bud" x="240" y="85" width="22" height="22"/><use href="#bud" x="10" y="250" width="22" height="22"/>
 </g></symbol>
 </defs></svg>
+
+<!-- Music element (swap the src for your own file if you like; this one is free with attribution) -->
+<audio id="wedding-music" preload="auto" loop src="https://www.bensound.com/bensound-music/bensound-onceagain.mp3"></audio>
+<p class="sr-only" id="music-status" aria-live="polite"></p>
 
 <div class="gate" id="gate" role="dialog" aria-label="Open the invitation">
   <svg class="fl tl" aria-hidden="true"><use href="#corner"/></svg><svg class="fl br" aria-hidden="true"><use href="#corner"/></svg>
@@ -221,178 +224,4 @@ fieldset{border:0;padding:0;margin:22px 0 0;display:grid;gap:12px}
 </section>
 
 <section class="pad mapsec" aria-labelledby="mt2">
-  <div class="head rv"><h3 class="t" id="mt2">Finding us</h3><p>Choose a place to see it on the map.</p></div>
-  <div class="tabs" role="tablist" aria-label="Venue map">
-    <button class="tab" role="tab" aria-selected="true" data-q="8 Buckley Close, Fairfield West NSW 2165, Australia">Ceremony</button>
-    <button class="tab" role="tab" aria-selected="false" data-q="Club Marconi, 121-133 Prairie Vale Road, Bossley Park NSW 2176, Australia">Reception</button>
-  </div>
-  <div class="mapbox rv"><iframe id="map" title="Map of the wedding venue" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=8+Buckley+Close%2C+Fairfield+West+NSW+2165%2C+Australia&output=embed"></iframe></div>
-  <div class="mapnote"><p id="addr">8 Buckley Close, Fairfield West NSW 2165, Australia.</p><a class="btn" id="dir" style="color:var(--claret)" href="https://www.google.com/maps/dir/?api=1&destination=8+Buckley+Close%2C+Fairfield+West+NSW+2165%2C+Australia" target="_blank" rel="noopener noreferrer">Open in Google Maps</a></div>
-</section>
-
-<section class="pad rsvp" id="rsvp" aria-labelledby="rt">
-  <div class="head rv"><h3 class="t" id="rt">Will you join us?</h3>
-    <p class="contact">Kindly RSVP (<a href="tel:0423462900">0423462900</a> or <a href="tel:0435424215">0435424215</a>) on or before 9th December 2026.</p></div>
-  <form class="card rv" id="rf" novalidate>
-    <p class="why">Kindly indicate your availability, as this information will assist us with entry arrangements and catering.</p>
-    <label class="nm">Your name<input name="name" id="gn" autocomplete="name" required placeholder="Full name"></label>
-    <fieldset><legend class="sr-only">Your availability</legend>
-      <label class="opt yes"><input type="radio" name="availability" value="YES – 60–100% available" required><span><b>Yes</b><small>60–100% available</small></span></label>
-      <label class="opt maybe"><input type="radio" name="availability" value="MAYBE – 50–59% available"><span><b>Maybe</b><small>50–59% available</small></span></label>
-      <label class="opt no"><input type="radio" name="availability" value="NOT AVAILABLE – Under 49% available"><span><b>Not available</b><small>Under 49% available</small></span></label>
-    </fieldset>
-    <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none">
-    <button class="send" type="submit" id="sb">Send my response</button>
-    <p class="msg" id="rm" role="status" aria-live="polite"></p>
-  </form>
-</section>
-
-<section class="pad cheers" aria-label="A note from Maggie and Obiora">
-  <svg class="fl tr" aria-hidden="true"><use href="#corner"/></svg><svg class="fl bl" aria-hidden="true"><use href="#corner"/></svg>
-  <div class="rv" style="position:relative;z-index:2">
-    <svg class="glasses" viewBox="0 0 230 250" aria-hidden="true">
-      <defs><linearGradient id="champ" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbf0c8"/><stop offset="1" stop-color="#e0bc6c"/></linearGradient></defs>
-      <g class="glass-l"><g transform="translate(-6 0)"><path d="M98 22h26l-4 76q-9 9-18 0Z" fill="url(#champ)" fill-opacity=".85" stroke="#f4e3b4" stroke-width="1.5"/><path d="M111 106v100M92 208h38" stroke="#f4e3b4" stroke-width="2.5" stroke-linecap="round" fill="none"/><circle class="bub" cx="108" cy="80" r="2"/><circle class="bub" cx="115" cy="86" r="1.6" style="animation-delay:1.2s"/><circle class="bub" cx="111" cy="90" r="1.8" style="animation-delay:2.3s"/></g></g>
-      <g class="glass-r"><g transform="translate(6 0)"><path d="M106 22h26l-4 76q-9 9-18 0Z" fill="url(#champ)" fill-opacity=".85" stroke="#f4e3b4" stroke-width="1.5"/><path d="M119 106v100M100 208h38" stroke="#f4e3b4" stroke-width="2.5" stroke-linecap="round" fill="none"/><circle class="bub" cx="118" cy="84" r="1.8" style="animation-delay:.6s"/><circle class="bub" cx="124" cy="78" r="1.6" style="animation-delay:1.8s"/><circle class="bub" cx="121" cy="92" r="2" style="animation-delay:2.8s"/></g></g>
-      <path class="spark" d="M115 4l3 10 10 3-10 3-3 10-3-10-10-3 10-3Z"/><path class="spark" style="animation-delay:.8s" d="M160 26l2 6 6 2-6 2-2 6-2-6-6-2 6-2Z"/><path class="spark" style="animation-delay:1.5s" d="M72 30l2 6 6 2-6 2-2 6-2-6-6-2 6-2Z"/>
-    </svg>
-    <p class="small" style="color:var(--gold)">Raise a glass with us</p>
-    <blockquote>“Whether you’ve known us for years or only a little while, you are part of how we got here. Having the people we love in the room is all we’ve really wished for, so please come and celebrate with us.”</blockquote>
-  </div>
-</section>
-
-<section class="pad closing" aria-labelledby="cn">
-  <svg class="fl tl" style="opacity:.5" aria-hidden="true"><use href="#corner"/></svg><svg class="fl br" style="opacity:.5" aria-hidden="true"><use href="#corner"/></svg>
-  <div class="inner rv">
-    <p class="small" style="color:var(--gold-d)">One love. One promise. A lifetime together.</p>
-    <h3 id="cn">Maggie Soo <em>&</em><br>Obiora Okonkwo</h3>
-    <div class="rule" aria-hidden="true">✧</div>
-    <p class="sign">See you on the 19th. With love, Maggie &amp; Obiora.</p>
-    <a class="top small" href="#top">Back to the beginning ↑</a>
-  </div>
-</section>
-</main>
-<footer>M &amp; O · Forever begins on 19 . 12 . 2026</footer>
-<p id="st" class="sr-only" aria-live="polite"></p>
-
-<script>
-(() => {
-const $ = id => document.getElementById(id), root = document.documentElement;
-
-/* reveal on scroll */
-const rv = [...document.querySelectorAll('.rv')];
-if ('IntersectionObserver' in window) {
-  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .12 });
-  rv.forEach(el => io.observe(el));
-} else rv.forEach(el => el.classList.add('in'));
-
-/* falling petals */
-if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
-  const box = $('petals');
-  for (let i = 0; i < 16; i++) {
-    const p = document.createElement('i'); p.className = 'petal';
-    p.style.cssText = `left:${Math.random() * 100}%;animation-duration:${9 + Math.random() * 9}s;animation-delay:-${Math.random() * 14}s;transform:scale(${.6 + Math.random() * .9})`;
-    box.appendChild(p);
-  }
-}
-
-/* countdown to 9:00 AM Sydney time (AEDT, UTC+11) */
-const target = new Date('2026-12-19T09:00:00+11:00');
-const pad = n => String(n).padStart(2, '0');
-function tick() {
-  let s = Math.floor((target - Date.now()) / 1000);
-  if (s <= 0) { $('cd').hidden = true; $('cd-l').textContent = 'Today is the day'; return; }
-  $('d').textContent = Math.floor(s / 86400); $('h').textContent = pad(Math.floor(s % 86400 / 3600));
-  $('m').textContent = pad(Math.floor(s % 3600 / 60)); $('s').textContent = pad(s % 60);
-}
-tick(); setInterval(tick, 1000);
-
-/* map tabs */
-const enc = encodeURIComponent;
-document.querySelectorAll('.tab').forEach(t => t.addEventListener('click', () => {
-  document.querySelectorAll('.tab').forEach(x => x.setAttribute('aria-selected', x === t));
-  const q = t.dataset.q;
-  $('map').src = 'https://www.google.com/maps?q=' + enc(q) + '&output=embed';
-  $('dir').href = 'https://www.google.com/maps/dir/?api=1&destination=' + enc(q);
-  $('addr').textContent = q.replace('Club Marconi, ', 'Club Marconi, ') + '.';
-}));
-
-/* RSVP: posts to FormSubmit, which emails the organiser. Falls back to the guest's own email app if that fails. */
-const TO = 'obioraokonkwoone@gmail.com';
-$('rf').addEventListener('submit', async e => {
-  e.preventDefault();
-  const m = $('rm'), name = $('gn').value.trim(), pick = document.querySelector('input[name=availability]:checked');
-  m.style.color = '';
-  if (!name || !pick) { m.style.color = '#a9566a'; m.textContent = !name ? 'Please enter your name.' : 'Please choose one of the three options.'; return; }
-  if (document.querySelector('[name=_honey]').value) return;
-  const sb = $('sb'); sb.disabled = true; m.textContent = 'Sending…';
-  const mail = 'mailto:' + TO + '?subject=' + encodeURIComponent('Wedding RSVP – ' + name) + '&body=' + encodeURIComponent('Name: ' + name + '\nAvailability: ' + pick.value);
-  try {
-    const r = await fetch('https://formsubmit.co/ajax/' + TO, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-      body: JSON.stringify({ name, availability: pick.value, _subject: 'Wedding RSVP – ' + name, _captcha: 'false', _template: 'table' }) });
-    const d = await r.json();
-    if (r.ok && (d.success === true || d.success === 'true')) { m.textContent = 'Thank you, ' + name + '. Your response has been sent.'; $('rf').reset(); }
-    else throw new Error('not sent');
-  } catch (err) {
-    m.innerHTML = 'We could not send that automatically. <a href="' + mail + '">Send it by email instead</a>, or call one of the numbers above.';
-  } finally { sb.disabled = false; }
-});
-
-/* Music: original piano-and-strings piece generated live with Web Audio (no recording, so no licensing issue).
-   One continuous scheduler with overlapping string pads, so chord changes never leave a gap. */
-let ctx, bus, playing = false, userPaused = false, step = 0, nextT = 0;
-const chords = [[60, 64, 67, 71], [55, 59, 62, 67], [57, 60, 64, 67], [53, 57, 60, 65], [60, 64, 67, 72], [55, 59, 62, 65], [57, 60, 64, 69], [53, 57, 60, 64]];
-const hz = m => 440 * Math.pow(2, (m - 69) / 12), STEP = .62;
-function piano(f, t, v, d) {
-  const g = ctx.createGain(); g.connect(bus);
-  g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(v, t + .012); g.gain.exponentialRampToValueAtTime(.0001, t + d);
-  [[1, 'triangle', 1], [2, 'sine', .35], [3, 'sine', .12]].forEach(([k, type, a]) => { const o = ctx.createOscillator(), h = ctx.createGain(); o.type = type; o.frequency.value = f * k; h.gain.value = a; o.connect(h); h.connect(g); o.start(t); o.stop(t + d); });
-}
-function strings(notes, t, d) {
-  const lp = ctx.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = 1100; lp.Q.value = .3;
-  const g = ctx.createGain(); g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(.045, t + 1.8); g.gain.setValueAtTime(.045, t + d - 1.6); g.gain.linearRampToValueAtTime(0, t + d + 1.2);
-  lp.connect(g); g.connect(bus);
-  notes.forEach(n => [-6, 6].forEach(c => { const o = ctx.createOscillator(); o.type = 'sawtooth'; o.frequency.value = hz(n); o.detune.value = c; const l = ctx.createOscillator(), lg = ctx.createGain(); l.frequency.value = 4.8; lg.gain.value = 4; l.connect(lg); lg.connect(o.detune); o.connect(lp); o.start(t); l.start(t); o.stop(t + d + 1.3); l.stop(t + d + 1.3); }));
-}
-function schedule() {
-  while (nextT < ctx.currentTime + 1.5) {
-    const c = chords[Math.floor(step / 8) % chords.length], i = step % 8;
-    if (i === 0) { strings([c[0] - 12, c[1], c[2], c[3]], nextT, 8 * STEP); piano(hz(c[0] - 24), nextT, .13, 5); }
-    piano(hz(c[[0, 1, 2, 3, 2, 1, 2, 1][i]] + 12), nextT, .1, 2.8);
-    if (i === 0 || i === 4) piano(hz(c[3] + 12 + (i ? 2 : 0)), nextT + .02, .07, 3.4);
-    nextT += STEP; step++;
-  }
-}
-function setup() {
-  if (ctx) return;
-  ctx = new (window.AudioContext || window.webkitAudioContext)();
-  const master = ctx.createGain(); master.gain.value = .32; master.connect(ctx.destination);
-  const len = ctx.sampleRate * 3.2, ir = ctx.createBuffer(2, len, ctx.sampleRate);
-  for (let c = 0; c < 2; c++) { const d = ir.getChannelData(c); for (let i = 0; i < len; i++) d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / len, 2.4); }
-  const rev = ctx.createConvolver(), wet = ctx.createGain(); rev.buffer = ir; wet.gain.value = .6;
-  bus = ctx.createGain(); bus.connect(master); bus.connect(rev); rev.connect(wet); wet.connect(master);
-  nextT = ctx.currentTime + .15; setInterval(schedule, 300);
-  ctx.addEventListener('statechange', () => ui(ctx.state === 'running'));
-}
-function ui(on) { playing = on; $('mt').setAttribute('aria-pressed', on); $('mt').classList.toggle('hint', !on && !userPaused); $('ml').textContent = on ? 'Pause music' : 'Play music'; $('st').textContent = on ? 'Music is playing.' : 'Music is off.'; }
-async function play() { try { setup(); await ctx.resume(); ui(ctx.state === 'running'); } catch (e) { ui(false); } }
-async function pause() { userPaused = true; if (ctx) await ctx.suspend(); ui(false); }
-$('mt').addEventListener('click', () => { if (playing) pause(); else { userPaused = false; play(); } });
-/* try to start as soon as the page opens; if the browser blocks it, the first tap or key press starts it */
-try { setup(); ctx.resume().then(() => ui(ctx.state === 'running')); } catch (e) {}
-ui(false);
-['pointerdown', 'keydown', 'touchend'].forEach(ev => addEventListener(ev, function f(e) { if (userPaused || playing || e.target.closest('#openq,#mt')) return; play(); }, { passive: true }));
-
-/* opening gate: the tap is also the permission for sound, so nothing ever autoplays */
-function openGate(withMusic) {
-  $('gate').classList.add('open'); root.classList.remove('locked'); scrollTo(0, 0);
-  if (withMusic) { userPaused = false; play(); } else pause();
-  setTimeout(() => $('gate').setAttribute('hidden', ''), 1500);
-}
-$('open').addEventListener('click', () => openGate(true));
-$('openq').addEventListener('click', () => openGate(false));
-$('open').focus({ preventScroll: true });
-})();
-</script>
-</body>
-</html>
+  <div class="head rv"><h3 class="t" id="mt2">Finding us
