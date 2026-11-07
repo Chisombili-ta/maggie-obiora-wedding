@@ -57,7 +57,7 @@ button{font:inherit;cursor:pointer}
 .hero{position:relative;overflow:hidden;min-height:100svh;display:grid;place-items:center;text-align:center;color:var(--ivory);padding:110px 20px 80px;background:radial-gradient(ellipse at 50% 35%,#74263f,var(--claret) 45%,var(--night))}
 .frame{position:relative;z-index:2;max-width:640px;width:100%;padding:70px 24px 54px;border:1px solid #d9b97766;border-radius:50% 50% 14px 14px/26% 26% 14px 14px}
 .frame:before{content:'';position:absolute;inset:10px;border:1px solid #d9b97733;border-radius:inherit}
-.hero h2{font:400 clamp(52px,11vw,96px)/1.08 var(--script);margin:18px 0}
+.hero h2{font:400 clamp(52px,11vw,96px)/1.25 var(--script);margin:10px 0;padding:.16em .22em .1em;overflow:visible}
 .hero h2 span{display:block}.hero h2 em{display:block;font:italic 400 .38em var(--serif);color:var(--gold);margin:4px 0}
 .hero .lead{max-width:30ch;margin:0 auto;font-size:21px}
 .rule{display:flex;align-items:center;justify-content:center;gap:14px;color:var(--gold);margin:22px 0}.rule:before,.rule:after{content:'';width:64px;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}.rule:after{transform:scaleX(-1)}
@@ -120,8 +120,29 @@ h3.t{font:400 clamp(38px,6vw,56px)/1.15 var(--serif);color:var(--claret);margin:
 .top{color:#8a6d70;text-decoration:none;font-size:11px;display:inline-block;margin-top:26px}
 footer{background:var(--night);color:var(--gold);text-align:center;padding:26px 20px;font:400 11px var(--sans);letter-spacing:.22em;text-transform:uppercase}
 
+
+.idnote{margin:20px 0 0;padding:12px 18px;background:var(--claret);color:var(--gold);border:1px solid var(--gold);border-radius:6px;font:500 11px/1.6 var(--sans);letter-spacing:.14em;box-shadow:0 0 0 4px var(--blush),0 0 0 5px #a98a4f88}
+.rsvp{background:var(--ivory)}.rsvp .contact{font-style:normal;font-size:clamp(20px,3vw,24px);color:var(--claret);max-width:600px;margin:12px auto 0}
+.contact a{color:var(--claret);font-weight:600;text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:5px;white-space:nowrap}
+.card{max-width:640px;margin:auto;padding:38px clamp(20px,5vw,44px);background:#fffaf2;border:1px solid var(--gold-d);border-radius:200px 200px 14px 14px/70px 70px 14px 14px;box-shadow:0 18px 44px #541a2e1f;text-align:center}
+.why{margin:30px 0 22px;font-style:italic}
+.nm{display:block;text-align:left;font:500 11px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--claret)}
+.nm input{display:block;width:100%;margin-top:8px;padding:13px 14px;font:400 20px var(--serif);color:var(--ink);background:#fff;border:1px solid #c9b48a;border-radius:8px}
+fieldset{border:0;padding:0;margin:22px 0 0;display:grid;gap:12px}
+.opt{position:relative;display:block;cursor:pointer}
+.opt input{position:absolute;opacity:0;inset:0;cursor:pointer}
+.opt span{display:flex;flex-direction:column;align-items:center;padding:15px 12px;border:1.5px solid var(--c);background:var(--t);border-radius:10px;color:var(--claret);transition:background .25s,color .25s,box-shadow .25s}
+.opt b{font:500 22px var(--serif);letter-spacing:.04em;text-transform:uppercase}.opt small{font:500 11px var(--sans);letter-spacing:.1em}
+.yes{--c:#6b8160;--t:#e6eddf}.maybe{--c:#b8934f;--t:#f6ecd2}.no{--c:#a9566a;--t:#f4dde0}
+.opt input:checked+span{background:var(--c);color:#fff;box-shadow:0 0 0 3px var(--ivory),0 0 0 4.5px var(--c)}
+.opt input:checked+span:after{content:'Selected';font:500 9px var(--sans);letter-spacing:.2em;text-transform:uppercase;margin-top:4px}
+.opt input:focus-visible+span{outline:2px solid var(--gold);outline-offset:4px}
+.send{margin-top:24px;padding:15px 34px;border:0;border-radius:40px;background:var(--claret);color:var(--ivory);font:500 12px var(--sans);letter-spacing:.18em;text-transform:uppercase}
+.send:hover{background:#74263f}.send:disabled{opacity:.6;cursor:wait}
+.msg{min-height:1.6em;margin:16px 0 0;font-size:18px}.msg a{color:var(--claret);font-weight:600}
+.music.hint{animation:glow 2.2s ease-in-out infinite}@keyframes glow{50%{box-shadow:0 0 0 4px #d9b97755}}
 .js .rv{opacity:0;transform:translateY(24px);transition:opacity 1s,transform 1s}.js .rv.in{opacity:1;transform:none}
-@media(max-width:760px){body{font-size:19px}.pad{padding:70px 22px}.events{grid-template-columns:1fr;max-width:420px}.mapbox iframe{height:360px}.bar .mono{font-size:24px}.music span.lbl{font-size:10px}.frame{padding-top:60px}.fl{width:62vw}}
+@media(max-width:760px){body{font-size:19px}.pad{padding:70px 22px}.events{grid-template-columns:1fr;max-width:420px}.mapbox iframe{height:360px}.bar .mono{font-size:24px}.music span.lbl{font-size:10px}.frame{padding-top:78px}.fl{width:62vw}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}.js .rv{opacity:1;transform:none}.petals{display:none}}
 </style>
 </head>
@@ -167,7 +188,7 @@ footer{background:var(--night);color:var(--gold);text-align:center;padding:26px 
   <div class="frame">
     <p class="small" style="color:var(--gold)">Together with their families</p>
     <h2 id="names" class="gold-text"><span>Maggie Soo</span><em>&</em><span>Obiora Okonkwo</span></h2>
-    <p class="lead">are getting married, and they would be so happy if you were there.</p>
+    <p class="lead">are getting married and would be so happy to have you there.</p>
     <div class="rule" aria-hidden="true">✧</div>
     <p class="date">Saturday, 19 December 2026</p>
     <p class="time">The beginning of forever · 9:00 AM</p>
@@ -193,6 +214,7 @@ footer{background:var(--night);color:var(--gold);text-align:center;padding:26px 
       <svg class="ic" viewBox="0 0 80 70" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="m20 10 20 8-8 20c-6 13-25 6-19-8l7-20Zm40 0-20 8 8 20c6 13 25 6 19-8l-7-20ZM23 43l-6 17m-8-3 16 6m32-20 6 17m8-3-16 6M40 0v7"/></svg>
       <h4>Reception</h4><p class="when">Saturday, 19 December 2026</p><p class="hr">11:15 <small>AM</small> – 2:00 <small>PM</small></p>
       <address><strong>Club Marconi</strong><br>121–133 Prairie Vale Road,<br>Bossley Park NSW 2176, Australia.</address>
+      <p class="idnote">VALID ID IS REQUIRED FOR ENTRY TO THE RECEPTION.</p>
       <a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=Club+Marconi%2C+121-133+Prairie+Vale+Road%2C+Bossley+Park+NSW+2176%2C+Australia" target="_blank" rel="noopener noreferrer">Get directions<span class="sr-only"> to the reception (opens Google Maps in a new tab)</span></a>
     </article>
   </div>
@@ -206,6 +228,23 @@ footer{background:var(--night);color:var(--gold);text-align:center;padding:26px 
   </div>
   <div class="mapbox rv"><iframe id="map" title="Map of the wedding venue" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=8+Buckley+Close%2C+Fairfield+West+NSW+2165%2C+Australia&output=embed"></iframe></div>
   <div class="mapnote"><p id="addr">8 Buckley Close, Fairfield West NSW 2165, Australia.</p><a class="btn" id="dir" style="color:var(--claret)" href="https://www.google.com/maps/dir/?api=1&destination=8+Buckley+Close%2C+Fairfield+West+NSW+2165%2C+Australia" target="_blank" rel="noopener noreferrer">Open in Google Maps</a></div>
+</section>
+
+<section class="pad rsvp" id="rsvp" aria-labelledby="rt">
+  <div class="head rv"><h3 class="t" id="rt">Will you join us?</h3>
+    <p class="contact">Kindly RSVP (<a href="tel:0423462900">0423462900</a> or <a href="tel:0435424215">0435424215</a>) on or before 9th December 2026.</p></div>
+  <form class="card rv" id="rf" novalidate>
+    <p class="why">Kindly indicate your availability, as this information will assist us with entry arrangements and catering.</p>
+    <label class="nm">Your name<input name="name" id="gn" autocomplete="name" required placeholder="Full name"></label>
+    <fieldset><legend class="sr-only">Your availability</legend>
+      <label class="opt yes"><input type="radio" name="availability" value="YES – 60–100% available" required><span><b>Yes</b><small>60–100% available</small></span></label>
+      <label class="opt maybe"><input type="radio" name="availability" value="MAYBE – 50–59% available"><span><b>Maybe</b><small>50–59% available</small></span></label>
+      <label class="opt no"><input type="radio" name="availability" value="NOT AVAILABLE – Under 49% available"><span><b>Not available</b><small>Under 49% available</small></span></label>
+    </fieldset>
+    <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none">
+    <button class="send" type="submit" id="sb">Send my response</button>
+    <p class="msg" id="rm" role="status" aria-live="polite"></p>
+  </form>
 </section>
 
 <section class="pad cheers" aria-label="A note from Maggie and Obiora">
@@ -278,48 +317,76 @@ document.querySelectorAll('.tab').forEach(t => t.addEventListener('click', () =>
   $('addr').textContent = q.replace('Club Marconi, ', 'Club Marconi, ') + '.';
 }));
 
-/* music: a soft piano-style melody generated live with Web Audio, so no audio file can go missing */
-let ctx, playing = false, step = 0, nextT = 0, started = false;
-const chords = [[60, 64, 67, 71], [57, 60, 64, 67], [53, 57, 60, 64], [55, 59, 62, 64]];
-const hz = m => 440 * Math.pow(2, (m - 69) / 12);
-function note(f, t, v, d) {
-  const o = ctx.createOscillator(), o2 = ctx.createOscillator(), g = ctx.createGain();
-  o.type = 'triangle'; o2.type = 'sine'; o.frequency.value = f; o2.frequency.value = f * 2;
-  g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(v, t + .015); g.gain.exponentialRampToValueAtTime(.0001, t + d);
-  o.connect(g); o2.connect(g); g.connect(bus); o.start(t); o2.start(t); o.stop(t + d); o2.stop(t + d);
+/* RSVP: posts to FormSubmit, which emails the organiser. Falls back to the guest's own email app if that fails. */
+const TO = 'obioraokonkwoone@gmail.com';
+$('rf').addEventListener('submit', async e => {
+  e.preventDefault();
+  const m = $('rm'), name = $('gn').value.trim(), pick = document.querySelector('input[name=availability]:checked');
+  m.style.color = '';
+  if (!name || !pick) { m.style.color = '#a9566a'; m.textContent = !name ? 'Please enter your name.' : 'Please choose one of the three options.'; return; }
+  if (document.querySelector('[name=_honey]').value) return;
+  const sb = $('sb'); sb.disabled = true; m.textContent = 'Sending…';
+  const mail = 'mailto:' + TO + '?subject=' + encodeURIComponent('Wedding RSVP – ' + name) + '&body=' + encodeURIComponent('Name: ' + name + '\nAvailability: ' + pick.value);
+  try {
+    const r = await fetch('https://formsubmit.co/ajax/' + TO, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({ name, availability: pick.value, _subject: 'Wedding RSVP – ' + name, _captcha: 'false', _template: 'table' }) });
+    const d = await r.json();
+    if (r.ok && (d.success === true || d.success === 'true')) { m.textContent = 'Thank you, ' + name + '. Your response has been sent.'; $('rf').reset(); }
+    else throw new Error('not sent');
+  } catch (err) {
+    m.innerHTML = 'We could not send that automatically. <a href="' + mail + '">Send it by email instead</a>, or call one of the numbers above.';
+  } finally { sb.disabled = false; }
+});
+
+/* Music: original piano-and-strings piece generated live with Web Audio (no recording, so no licensing issue).
+   One continuous scheduler with overlapping string pads, so chord changes never leave a gap. */
+let ctx, bus, playing = false, userPaused = false, step = 0, nextT = 0;
+const chords = [[60, 64, 67, 71], [55, 59, 62, 67], [57, 60, 64, 67], [53, 57, 60, 65], [60, 64, 67, 72], [55, 59, 62, 65], [57, 60, 64, 69], [53, 57, 60, 64]];
+const hz = m => 440 * Math.pow(2, (m - 69) / 12), STEP = .62;
+function piano(f, t, v, d) {
+  const g = ctx.createGain(); g.connect(bus);
+  g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(v, t + .012); g.gain.exponentialRampToValueAtTime(.0001, t + d);
+  [[1, 'triangle', 1], [2, 'sine', .35], [3, 'sine', .12]].forEach(([k, type, a]) => { const o = ctx.createOscillator(), h = ctx.createGain(); o.type = type; o.frequency.value = f * k; h.gain.value = a; o.connect(h); h.connect(g); o.start(t); o.stop(t + d); });
+}
+function strings(notes, t, d) {
+  const lp = ctx.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = 1100; lp.Q.value = .3;
+  const g = ctx.createGain(); g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(.045, t + 1.8); g.gain.setValueAtTime(.045, t + d - 1.6); g.gain.linearRampToValueAtTime(0, t + d + 1.2);
+  lp.connect(g); g.connect(bus);
+  notes.forEach(n => [-6, 6].forEach(c => { const o = ctx.createOscillator(); o.type = 'sawtooth'; o.frequency.value = hz(n); o.detune.value = c; const l = ctx.createOscillator(), lg = ctx.createGain(); l.frequency.value = 4.8; lg.gain.value = 4; l.connect(lg); lg.connect(o.detune); o.connect(lp); o.start(t); l.start(t); o.stop(t + d + 1.3); l.stop(t + d + 1.3); }));
 }
 function schedule() {
-  while (nextT < ctx.currentTime + 1.2) {
-    const bar = Math.floor(step / 8) % 4, i = step % 8, c = chords[bar];
-    const seq = [0, 1, 2, 3, 2, 1, 2, 3];
-    note(hz(c[seq[i]] + 12), nextT, .11, 2.6);
-    if (i === 0) { note(hz(c[0] - 12), nextT, .16, 4.2); note(hz(c[2]), nextT, .06, 4.2); }
-    if (i === 4) note(hz(c[1]), nextT, .05, 2.5);
-    nextT += .5; step++;
+  while (nextT < ctx.currentTime + 1.5) {
+    const c = chords[Math.floor(step / 8) % chords.length], i = step % 8;
+    if (i === 0) { strings([c[0] - 12, c[1], c[2], c[3]], nextT, 8 * STEP); piano(hz(c[0] - 24), nextT, .13, 5); }
+    piano(hz(c[[0, 1, 2, 3, 2, 1, 2, 1][i]] + 12), nextT, .1, 2.8);
+    if (i === 0 || i === 4) piano(hz(c[3] + 12 + (i ? 2 : 0)), nextT + .02, .07, 3.4);
+    nextT += STEP; step++;
   }
 }
 function setup() {
+  if (ctx) return;
   ctx = new (window.AudioContext || window.webkitAudioContext)();
-  const master = ctx.createGain(); master.gain.value = .55; master.connect(ctx.destination);
-  const len = ctx.sampleRate * 2.8, ir = ctx.createBuffer(2, len, ctx.sampleRate);
-  for (let c = 0; c < 2; c++) { const d = ir.getChannelData(c); for (let i = 0; i < len; i++) d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / len, 2.6); }
-  const rev = ctx.createConvolver(); rev.buffer = ir; const wet = ctx.createGain(); wet.gain.value = .55;
+  const master = ctx.createGain(); master.gain.value = .32; master.connect(ctx.destination);
+  const len = ctx.sampleRate * 3.2, ir = ctx.createBuffer(2, len, ctx.sampleRate);
+  for (let c = 0; c < 2; c++) { const d = ir.getChannelData(c); for (let i = 0; i < len; i++) d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / len, 2.4); }
+  const rev = ctx.createConvolver(), wet = ctx.createGain(); rev.buffer = ir; wet.gain.value = .6;
   bus = ctx.createGain(); bus.connect(master); bus.connect(rev); rev.connect(wet); wet.connect(master);
-  nextT = ctx.currentTime + .1; setInterval(schedule, 250); started = true;
+  nextT = ctx.currentTime + .15; setInterval(schedule, 300);
+  ctx.addEventListener('statechange', () => ui(ctx.state === 'running'));
 }
-let bus;
-function ui(on) { playing = on; $('mt').setAttribute('aria-pressed', on); $('ml').textContent = on ? 'Pause music' : 'Play music'; $('st').textContent = on ? 'Music is playing.' : 'Music paused.'; }
-async function play() {
-  try { if (!started) setup(); await ctx.resume(); ui(true); }
-  catch (e) { $('st').textContent = 'Music could not start on this device.'; }
-}
-async function pause() { if (ctx) await ctx.suspend(); ui(false); }
-$('mt').addEventListener('click', () => playing ? pause() : play());
+function ui(on) { playing = on; $('mt').setAttribute('aria-pressed', on); $('mt').classList.toggle('hint', !on && !userPaused); $('ml').textContent = on ? 'Pause music' : 'Play music'; $('st').textContent = on ? 'Music is playing.' : 'Music is off.'; }
+async function play() { try { setup(); await ctx.resume(); ui(ctx.state === 'running'); } catch (e) { ui(false); } }
+async function pause() { userPaused = true; if (ctx) await ctx.suspend(); ui(false); }
+$('mt').addEventListener('click', () => { if (playing) pause(); else { userPaused = false; play(); } });
+/* try to start as soon as the page opens; if the browser blocks it, the first tap or key press starts it */
+try { setup(); ctx.resume().then(() => ui(ctx.state === 'running')); } catch (e) {}
+ui(false);
+['pointerdown', 'keydown', 'touchend'].forEach(ev => addEventListener(ev, function f(e) { if (userPaused || playing || e.target.closest('#openq,#mt')) return; play(); }, { passive: true }));
 
 /* opening gate: the tap is also the permission for sound, so nothing ever autoplays */
 function openGate(withMusic) {
   $('gate').classList.add('open'); root.classList.remove('locked'); scrollTo(0, 0);
-  if (withMusic) play();
+  if (withMusic) { userPaused = false; play(); } else pause();
   setTimeout(() => $('gate').setAttribute('hidden', ''), 1500);
 }
 $('open').addEventListener('click', () => openGate(true));
