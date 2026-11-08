@@ -241,7 +241,6 @@ fieldset{border:0;padding:0;margin:22px 0 0;display:grid;gap:12px}
       <label class="opt maybe"><input type="radio" name="availability" value="MAYBE – 50–59% available"><span><b>Maybe</b><small>50–59% available</small></span></label>
       <label class="opt no"><input type="radio" name="availability" value="NOT AVAILABLE – Under 49% available"><span><b>Not available</b><small>Under 49% available</small></span></label>
     </fieldset>
-    <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none">
     <button class="send" type="submit" id="sb">Send my response</button>
     <p class="msg" id="rm" role="status" aria-live="polite"></p>
   </form>
@@ -317,25 +316,62 @@ document.querySelectorAll('.tab').forEach(t => t.addEventListener('click', () =>
   $('addr').textContent = q.replace('Club Marconi, ', 'Club Marconi, ') + '.';
 }));
 
-/* RSVP: posts to FormSubmit, which emails the organiser. Falls back to the guest's own email app if that fails. */
-const TO = 'obioraokonkwoone@gmail.com';
+/* RSVP: posts to FormSubmit, which emails BOTH recipients.
+   First address is the endpoint; the other goes in _cc.
+   Each recipient must click FormSubmit's activation email once. */
+const TO_PRIMARY = 'maggiesoo@gmail.com';
+const TO_CC      = 'obioraokonkwoone@gmail.com';
+
 $('rf').addEventListener('submit', async e => {
   e.preventDefault();
-  const m = $('rm'), name = $('gn').value.trim(), pick = document.querySelector('input[name=availability]:checked');
+  const m = $('rm');
+  const name = $('gn').value.trim();
+  const pick = document.querySelector('input[name=availability]:checked');
   m.style.color = '';
-  if (!name || !pick) { m.style.color = '#a9566a'; m.textContent = !name ? 'Please enter your name.' : 'Please choose one of the three options.'; return; }
-  if (document.querySelector('[name=_honey]').value) return;
-  const sb = $('sb'); sb.disabled = true; m.textContent = 'Sending…';
-  const mail = 'mailto:' + TO + '?subject=' + encodeURIComponent('Wedding RSVP – ' + name) + '&body=' + encodeURIComponent('Name: ' + name + '\nAvailability: ' + pick.value);
+
+  if (!name || !pick) {
+    m.style.color = '#a9566a';
+    m.textContent = !name ? 'Please enter your name.' : 'Please choose one of the three options.';
+    return;
+  }
+
+  const mailto = 'mailto:' + TO_PRIMARY + ',' + TO_CC +
+    '?subject=' + encodeURIComponent('Wedding RSVP – ' + name) +
+    '&body=' + encodeURIComponent('Name: ' + name + '\nAvailability: ' + pick.value);
+
+  const sb = $('sb');
+  sb.disabled = true;
+  m.textContent = 'Sending…';
+
   try {
-    const r = await fetch('https://formsubmit.co/ajax/' + TO, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-      body: JSON.stringify({ name, availability: pick.value, _subject: 'Wedding RSVP – ' + name, _captcha: 'false', _template: 'table' }) });
-    const d = await r.json();
-    if (r.ok && (d.success === true || d.success === 'true')) { m.textContent = 'Thank you, ' + name + '. Your response has been sent.'; $('rf').reset(); }
-    else throw new Error('not sent');
+    const r = await fetch('https://formsubmit.co/ajax/' + TO_PRIMARY, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({
+        name: name,
+        availability: pick.value,
+        _subject: 'Wedding RSVP – ' + name,
+        _cc: TO_CC,
+        _captcha: 'false',
+        _template: 'table'
+      })
+    });
+
+    if (r.ok) {
+      m.textContent = 'Thank you, ' + name + '. Your response has been sent to Maggie and Obiora.';
+      $('rf').reset();
+    } else {
+      let detail = '';
+      try { const d = await r.json(); detail = d.message || d.error || ''; } catch {}
+      throw new Error(detail || ('HTTP ' + r.status));
+    }
   } catch (err) {
-    m.innerHTML = 'We could not send that automatically. <a href="' + mail + '">Send it by email instead</a>, or call one of the numbers above.';
-  } finally { sb.disabled = false; }
+    m.innerHTML = 'We could not send that automatically' +
+      (err && err.message ? ' (' + err.message + ')' : '') +
+      '. <a href="' + mailto + '">Send it by email instead</a>, or call one of the numbers above.';
+  } finally {
+    sb.disabled = false;
+  }
 });
 
 /* Music: original piano-and-strings piece generated live with Web Audio (no recording, so no licensing issue).
