@@ -13,16 +13,8 @@
 <meta name="theme-color" content="#3a1322">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23541a2e'/%3E%3Ctext x='32' y='41' font-size='26' text-anchor='middle' fill='%23d9b977' font-family='Georgia' font-style='italic'%3EM%26O%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!-- UPDATED LINK: Added text=%26 to load only the ampersand from Cormorant -->
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&text=%26&family=Great+Vibes&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
 <style>
-/* ADDED RULE: Force Great Vibes to use Cormorant ONLY for the & symbol */
-@font-face {
-  font-family: 'Great Vibes';
-  src: local('Cormorant Garamond'), url('https://fonts.gstatic.com/s/cormorantgaramond/v16/co3YmX5slCNuHLi8bLeY9MK7whWMhyjQAllvuQWJ5heb_w.woff2') format('woff2');
-  unicode-range: U+0026;
-}
-
 /* Palette: deep claret + champagne gold (analogous warm base), dusty rose & blush (tints), sage green (the muted complement of the reds, used only in foliage) */
 :root{--claret:#541a2e;--night:#3a1322;--ivory:#fbf5ea;--blush:#f1d9d4;--rose:#cf8f98;--gold:#d9b977;--gold-d:#a98a4f;--sage:#7c8f70;--ink:#4a3236;
 --serif:'Cormorant Garamond',Georgia,serif;--script:'Great Vibes','Brush Script MT',cursive;--sans:'Montserrat',system-ui,sans-serif}
@@ -66,10 +58,7 @@ button{font:inherit;cursor:pointer}
 .frame{position:relative;z-index:2;max-width:640px;width:100%;padding:70px 24px 54px;border:1px solid #d9b97766;border-radius:50% 50% 14px 14px/26% 26% 14px 14px}
 .frame:before{content:'';position:absolute;inset:10px;border:1px solid #d9b97733;border-radius:inherit}
 .hero h2{font:400 clamp(52px,11vw,96px)/1.25 var(--script);margin:10px 0;padding:.16em .22em .1em;overflow:visible}
-.hero h2 span{display:block}
-/* UPDATED: styling for the new stacked & */
-.hero h2 .amp{display:block; font:italic 400 .45em var(--serif); color:var(--gold); margin: 0; line-height: 1;}
-
+.hero h2 span{display:block}.hero h2 em{display:block;font:italic 400 .38em var(--serif);color:var(--gold);margin:4px 0}
 .hero .lead{max-width:30ch;margin:0 auto;font-size:21px}
 .rule{display:flex;align-items:center;justify-content:center;gap:14px;color:var(--gold);margin:22px 0}.rule:before,.rule:after{content:'';width:64px;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}.rule:after{transform:scaleX(-1)}
 .hero .date{font-size:26px;margin:0}.hero .time{letter-spacing:.06em;color:#ecd9c4;margin:4px 0 0}
@@ -125,8 +114,7 @@ h3.t{font:400 clamp(38px,6vw,56px)/1.15 var(--serif);color:var(--claret);margin:
 /* closing */
 .closing{text-align:center;overflow:hidden;background:var(--ivory)}
 .closing h3{font:400 clamp(54px,10vw,88px)/1.2 var(--script);color:var(--claret);margin:16px 0}
-/* UPDATED: styling for the new stacked & */
-.closing h3 .amp{display:block; font:italic 400 .45em var(--serif); color:var(--gold-d); margin: 0; line-height: 1;}
+.closing h3 em{font:italic 400 .45em var(--serif);color:var(--gold-d)}
 .sign{font:italic 26px var(--serif);margin:14px 0 0}.closing .rule{color:var(--gold-d)}.closing .rule:before{background:linear-gradient(90deg,transparent,var(--gold-d))}.closing .rule:after{background:linear-gradient(90deg,transparent,var(--gold-d))}
 .closing .inner{position:relative;z-index:2}
 .top{color:#8a6d70;text-decoration:none;font-size:11px;display:inline-block;margin-top:26px}
@@ -199,9 +187,7 @@ fieldset{border:0;padding:0;margin:22px 0 0;display:grid;gap:12px}
   <div class="petals" id="petals" aria-hidden="true"></div>
   <div class="frame">
     <p class="small" style="color:var(--gold)">Together with their families</p>
-    <!-- UPDATED: Stacked names with a normal ampersand in the middle -->
-    <h2 id="names" class="gold-text"><span>Maggie Soo</span><span class="amp">&amp;</span><span>Obiora Okonkwo</span></h2>
-    
+    <h2 id="names" class="gold-text"><span>Maggie Soo</span><em>&</em><span>Obiora Okonkwo</span></h2>
     <p class="lead">are getting married and would be so happy to have you there.</p>
     <div class="rule" aria-hidden="true">✧</div>
     <p class="date">Saturday, 19 December 2026</p>
@@ -278,9 +264,7 @@ fieldset{border:0;padding:0;margin:22px 0 0;display:grid;gap:12px}
   <svg class="fl tl" style="opacity:.5" aria-hidden="true"><use href="#corner"/></svg><svg class="fl br" style="opacity:.5" aria-hidden="true"><use href="#corner"/></svg>
   <div class="inner rv">
     <p class="small" style="color:var(--gold-d)">One love. One promise. A lifetime together.</p>
-    <!-- UPDATED: Stacked names with a normal ampersand in the middle -->
-    <h3 id="cn"><span>Maggie Soo</span><span class="amp">&amp;</span><span>Obiora Okonkwo</span></h3>
-    
+    <h3 id="cn">Maggie Soo <em>&</em><br>Obiora Okonkwo</h3>
     <div class="rule" aria-hidden="true">✧</div>
     <p class="sign">See you on the 19th <br> With love, Maggie &amp; Obiora</br></p>
     <a class="top small" href="#top">Back to the beginning ↑</a>
